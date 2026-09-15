@@ -17,6 +17,10 @@ Layout dibuat responsif menggunakan LayoutBuilder. Pada layar smartphone, tampil
 |---|---|---|
 | ![Portrait](./screenshots/running_portrait.png) | ![Dark](./screenshots/running_dark.png) | ![Wide](./screenshots/running_wide.png) |
 
+| Mode Portrait (Light) | Mode Dark Theme | Mode Landscape / Tablet (2 Kolom) |
+|---|---|---|
+| ![Portrait](./screenshots/running_portrait.png) | ![Dark](./screenshots/running_dark.png) | ![Wide](./screenshots/running_wide.png) |
+
 ## 3. Kendala Layout yang Dihadapi & Solusinya
 - **Kendala**: Nama mata kuliah, nama dosen, melebihi batas kartu dan mengacaukan layout, menjadi acak acakan
 - **Solusi**: Menggunakan expanded pada bagian teks di dalam row, Kemudian membatasi teks dengan maxLines dan TextOverflow.ellipsis. Judul mata kuliah dibatasi maksimal dua baris agar tinggi kartu tetap konsisten.
