@@ -24,7 +24,9 @@ class FakeAnnouncementRepository implements AnnouncementRepository {
     if (category == null || category == 'Semua') {
       return _mockData;
     }
-    return _mockData.where((a) => a.category.toLowerCase() == category.toLowerCase()).toList();
+    return _mockData
+        .where((a) => a.category.toLowerCase() == category.toLowerCase())
+        .toList();
   }
 
   @override
@@ -34,8 +36,12 @@ class FakeAnnouncementRepository implements AnnouncementRepository {
 }
 
 void main() {
-  group('Modul 04 Autograding: Networking & REST API (Dio + Repository + 4-State)', () {
-    test('1. Model Announcement mem-parsing payload JSON dan serialisasi toJson dengan benar', () {
+  group(
+      'Modul 04 Autograding: Networking & REST API (Dio + Repository + 4-State)',
+      () {
+    test(
+        '1. Model Announcement mem-parsing payload JSON dan serialisasi toJson dengan benar',
+        () {
       final jsonPayload = {
         'id': 101,
         'title': 'Uji Coba Pengumuman',
@@ -58,9 +64,10 @@ void main() {
       expect(serialized['title'], equals('Uji Coba Pengumuman'));
     });
 
-    test('2. Repository menyaring pengumuman berdasarkan kategori yang dipilih', () async {
+    test('2. Repository menyaring pengumuman berdasarkan kategori yang dipilih',
+        () async {
       final repo = FakeAnnouncementRepository();
-      
+
       final all = await repo.getAnnouncements(category: 'Semua');
       expect(all.length, greaterThanOrEqualTo(4));
 
@@ -68,11 +75,14 @@ void main() {
       expect(akademik.every((a) => a.category == 'Akademik'), isTrue);
     });
 
-    testWidgets('3. AnnouncementListScreen menampilkan AppBar, filter chips, dan daftar data sukses', (WidgetTester tester) async {
+    testWidgets(
+        '3. AnnouncementListScreen menampilkan AppBar, filter chips, dan daftar data sukses',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            announcementRepositoryProvider.overrideWithValue(FakeAnnouncementRepository()),
+            announcementRepositoryProvider
+                .overrideWithValue(FakeAnnouncementRepository()),
           ],
           child: const MaterialApp(
             home: AnnouncementListScreen(),
@@ -95,7 +105,9 @@ void main() {
       expect(find.byType(Card), findsWidgets);
     });
 
-    testWidgets('4. AnnouncementListScreen menampilkan Error State dan tombol Coba Lagi saat request gagal', (WidgetTester tester) async {
+    testWidgets(
+        '4. AnnouncementListScreen menampilkan Error State dan tombol Coba Lagi saat request gagal',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [

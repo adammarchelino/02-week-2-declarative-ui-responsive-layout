@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'modul_01/profile_screen.dart';
-import 'modul_02/academic_dashboard_screen.dart';
+import 'modul_02/study_kasus/ruang_praktikum.dart';
 import 'modul_03/modul_03_app.dart';
 import 'modul_04/modul_04_app.dart';
 
@@ -23,7 +23,7 @@ class PoliwangiStarterApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const ModuleLauncherScreen(),
+      home: const RuangPraktikum(),
     );
   }
 }
@@ -258,7 +258,7 @@ class _ModuleLauncherScreenState extends State<ModuleLauncherScreen> {
             moduleNumber: 2,
             title: 'Declarative UI & Responsive Dashboard',
             subtitle: 'BoxConstraints, LayoutBuilder 1 vs 2 Kolom, Material 3',
-            builder: () => const AcademicDashboardScreen(),
+            builder: () => const RuangPraktikum(),
           ),
           const SizedBox(height: 10),
           _buildModuleCard(

@@ -8,8 +8,12 @@ import 'package:poliwangi_mobile_starter/modul_03/screens/add_krs_screen.dart';
 import 'package:poliwangi_mobile_starter/modul_03/screens/course_detail_screen.dart';
 
 void main() {
-  group('Modul 03 Autograding: Navigation & State Management (Riverpod + GoRouter)', () {
-    test('1. KrsNotifier mengelola state secara immutable, mencegah duplikasi & menghitung SKS', () {
+  group(
+      'Modul 03 Autograding: Navigation & State Management (Riverpod + GoRouter)',
+      () {
+    test(
+        '1. KrsNotifier mengelola state secara immutable, mencegah duplikasi & menghitung SKS',
+        () {
       final notifier = KrsNotifier();
 
       // State awal
@@ -39,7 +43,9 @@ void main() {
       expect(notifier.totalSks, equals(initialSks));
     });
 
-    testWidgets('2. KrsListScreen merender judul, badge SKS, dan daftar mata kuliah dengan ProviderScope', (WidgetTester tester) async {
+    testWidgets(
+        '2. KrsListScreen merender judul, badge SKS, dan daftar mata kuliah dengan ProviderScope',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const ProviderScope(
           child: MaterialApp(
@@ -57,7 +63,9 @@ void main() {
       expect(find.byType(FloatingActionButton), findsOneWidget);
     });
 
-    testWidgets('3. AddKrsScreen memvalidasi input wajib pada form menggunakan GlobalKey', (WidgetTester tester) async {
+    testWidgets(
+        '3. AddKrsScreen memvalidasi input wajib pada form menggunakan GlobalKey',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const ProviderScope(
           child: MaterialApp(
@@ -81,7 +89,9 @@ void main() {
       expect(find.text('Nama mata kuliah wajib diisi'), findsOneWidget);
     });
 
-    testWidgets('4. CourseDetailScreen mendukung simulasi Error State & Tombol Coba Lagi', (WidgetTester tester) async {
+    testWidgets(
+        '4. CourseDetailScreen mendukung simulasi Error State & Tombol Coba Lagi',
+        (WidgetTester tester) async {
       const course = KrsCourse(
         code: 'TRPL501',
         name: 'Pemrograman Perangkat Bergerak',
