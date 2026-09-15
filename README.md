@@ -17,7 +17,7 @@ Layout dibuat responsif menggunakan LayoutBuilder. Pada layar smartphone, tampil
 |---|---|---|
 | ![Portrait](./screenshots/running_portrait.png) | ![Dark](./screenshots/running_dark.png) | ![Wide](./screenshots/running_wide.png) |
 
-| Mode Portrait (Light) | Mode Potrait | Mode Landscape |
+| Mode Portrait (Light) | Mode Potrait | 
 |---|---|---|
 | ![Portrait](./screenshots/ss_baru.png) | ![Wide](./screenshots/ss_baru2.png) |
 
