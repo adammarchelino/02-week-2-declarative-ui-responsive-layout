@@ -23,7 +23,7 @@ class PoliwangiStarterApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const RuangPraktikum(),
+      home: const ModuleLauncherScreen(),
     );
   }
 }
